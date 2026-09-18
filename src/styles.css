@@ -353,3 +353,200 @@
 .empty-row {
   background: linear-gradient(90deg, transparent, oklch(0.82 0.045 257 / 42%), transparent);
 }
+
+/* Finition Apple / iPad — palette conservée depuis la capture de référence. */
+:root {
+  --radius: 1.25rem;
+  --apple-glass: oklch(0.91 0.035 245 / 68%);
+  --apple-glass-strong: oklch(0.95 0.025 245 / 82%);
+  --apple-edge: oklch(0.99 0.01 240 / 54%);
+  --apple-shadow: oklch(0.18 0.105 264 / 25%);
+}
+
+body {
+  font-family: "Work Sans", "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.dashboard-shell {
+  padding: 10px;
+}
+
+.sidebar {
+  inset: 10px auto 10px 10px;
+  width: calc(var(--sidebar-width) - 10px);
+  padding: 18px 10px 12px;
+  border: 1px solid oklch(0.94 0.045 236 / 34%);
+  border-radius: 24px;
+  background: linear-gradient(160deg, oklch(0.38 0.15 250 / 82%), oklch(0.27 0.13 263 / 76%));
+  box-shadow: 0 22px 52px oklch(0.15 0.12 264 / 33%), inset 0 1px 0 oklch(1 0 0 / 21%);
+  backdrop-filter: blur(34px) saturate(150%);
+}
+
+.brand {
+  min-height: 61px;
+  padding: 0 8px 15px;
+}
+
+.brand strong {
+  font-family: "Instrument Serif", Georgia, serif;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.brand-cart {
+  width: 39px;
+  height: 39px;
+  border-radius: 12px;
+  background: oklch(0.7 0.17 233 / 18%);
+  box-shadow: inset 0 1px 0 oklch(1 0 0 / 23%);
+}
+
+.nav-item {
+  height: 39px;
+  padding: 0 11px;
+  border-radius: 11px;
+  transition: background-color .18s ease, transform .18s ease, box-shadow .18s ease;
+}
+
+.nav-item.compact { height: 32px; }
+.nav-item:hover { transform: translateX(2px); }
+.nav-item.active {
+  background: linear-gradient(180deg, oklch(0.72 0.18 236 / 87%), oklch(0.59 0.23 257 / 86%));
+  box-shadow: 0 7px 18px oklch(0.19 0.14 264 / 27%), inset 0 1px 0 oklch(1 0 0 / 48%);
+}
+
+.logout {
+  border-radius: 11px;
+  background: oklch(0.82 0.07 241 / 15%);
+  box-shadow: inset 0 1px 0 oklch(1 0 0 / 12%);
+}
+
+.workspace {
+  margin-left: calc(var(--sidebar-width) - 2px);
+  padding: 10px 12px 18px 8px;
+}
+
+.topbar {
+  height: 95px;
+  padding: 0 8px;
+}
+
+.searchbox,
+.status-strip {
+  border-color: oklch(0.97 0.025 238 / 32%);
+  background: linear-gradient(180deg, oklch(0.73 0.105 242 / 38%), oklch(0.41 0.13 259 / 32%));
+  box-shadow: inset 0 1px 0 oklch(1 0 0 / 24%), 0 9px 24px oklch(0.18 0.1 260 / 15%);
+  backdrop-filter: blur(28px) saturate(145%);
+}
+
+.searchbox {
+  height: 45px;
+  border-radius: 15px;
+}
+
+.searchbox kbd {
+  padding: 3px 7px;
+  border: 1px solid oklch(0.95 0.03 240 / 22%);
+  border-radius: 7px;
+  background: oklch(0.3 0.1 257 / 17%);
+}
+
+.status-strip { border-radius: 11px; }
+.avatar { box-shadow: 0 7px 18px oklch(0.19 0.13 260 / 28%), inset 0 1px 0 oklch(1 0 0 / 45%); }
+
+.glass-panel,
+.entry-panel {
+  border-color: var(--apple-edge);
+  box-shadow: 0 18px 45px var(--apple-shadow), inset 0 1px 0 oklch(1 0 0 / 58%);
+  backdrop-filter: blur(32px) saturate(150%);
+}
+
+.overview-grid { gap: 14px; }
+.shortcuts,
+.chart-card,
+.entry-panel { border-radius: 22px; }
+
+.shortcuts {
+  background: linear-gradient(145deg, oklch(0.84 0.055 242 / 61%), oklch(0.67 0.08 269 / 48%));
+  padding: 17px 14px;
+}
+
+.shortcuts .glass-button svg {
+  width: 43px;
+  height: 43px;
+  padding: 10px;
+  border-radius: 13px;
+  background: linear-gradient(145deg, oklch(0.95 0.035 239 / 44%), oklch(0.58 0.13 267 / 45%));
+  box-shadow: inset 0 1px 0 oklch(1 0 0 / 52%), 0 8px 16px oklch(0.2 0.1 264 / 18%);
+  transition: transform .2s ease, filter .2s ease;
+}
+
+.shortcuts .glass-button:hover svg { transform: translateY(-2px) scale(1.035); filter: brightness(1.08); }
+
+.chart-card {
+  background: linear-gradient(145deg, oklch(0.89 0.04 242 / 75%), oklch(0.72 0.07 270 / 64%));
+  padding: 15px 19px 9px;
+}
+
+.chart-heading h2,
+.panel-title h2 {
+  font-family: "Instrument Serif", Georgia, serif;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.chart-heading h2 { font-size: 19px; }
+.panel-title h2 { font-size: 15px; }
+.chart-heading button { border-radius: 11px; backdrop-filter: blur(14px); }
+
+.tabbar {
+  height: 55px;
+  gap: 8px;
+  padding: 0 5px;
+}
+
+.tabbar .glass-button {
+  height: 38px;
+  border-radius: 12px;
+  background: oklch(0.88 0.05 244 / 49%);
+  box-shadow: inset 0 1px 0 oklch(1 0 0 / 43%), 0 6px 17px oklch(0.19 0.1 262 / 14%);
+  backdrop-filter: blur(22px);
+}
+
+.tabbar .is-active {
+  background: linear-gradient(180deg, oklch(0.69 0.2 241), oklch(0.56 0.24 267));
+  box-shadow: 0 8px 20px oklch(0.27 0.2 259 / 38%), inset 0 1px 0 oklch(1 0 0 / 55%);
+}
+
+.entry-panel {
+  background: linear-gradient(150deg, oklch(0.97 0.02 240 / 88%), oklch(0.89 0.04 270 / 82%));
+}
+
+.panel-meta { border-bottom-color: oklch(0.45 0.08 252 / 8%); }
+.panel-tools button {
+  border-color: oklch(0.69 0.08 252 / 18%);
+  border-radius: 10px;
+  background: linear-gradient(180deg, oklch(0.99 0.008 240 / 62%), oklch(0.84 0.045 255 / 38%));
+  box-shadow: 0 3px 8px oklch(0.25 0.09 260 / 9%), inset 0 1px 0 oklch(1 0 0 / 70%);
+  transition: transform .15s ease, filter .15s ease;
+}
+
+.panel-tools button:hover { filter: brightness(1.04); transform: translateY(-1px); }
+.table-head { background: oklch(0.68 0.07 258 / 10%); }
+.empty-row { background: linear-gradient(90deg, transparent, oklch(0.9 0.035 253 / 53%), transparent); }
+.empty-row > svg { border-radius: 11px; background: oklch(0.83 0.07 245 / 28%); }
+.sale-summary button { border-radius: 12px; box-shadow: 0 8px 20px oklch(0.42 0.22 250 / 40%), inset 0 1px 0 oklch(1 0 0 / 52%); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
+
+@media (max-width: 760px) {
+  .dashboard-shell { padding: 0; }
+  .workspace { padding: 12px; }
+  .sidebar { inset: 8px auto 8px 8px; width: 206px; border-radius: 22px; }
+  .overview-grid { gap: 12px; }
+  .shortcuts, .chart-card, .entry-panel { border-radius: 20px; }
+}
