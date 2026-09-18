@@ -28,9 +28,9 @@ export function EntryPanel({ type }: EntryPanelProps) {
         {sale && <label>Cotisation sociale <button type="button">9,7 <span>⌄</span></button> %</label>}
       </div>
       <div className="table-scroll">
-        <div className="data-table" style={{ gridTemplateColumns: sale ? "34px 76px 84px 105px 91px 91px 83px 86px 94px 132px 101px 44px 91px 75px 30px" : "40px 105px 132px 68px 94px 84px 142px 112px 105px 86px 125px 130px" }}>
+        <div className={`data-table ${sale ? "sale-table" : "purchase-table"}`}>
           {columns.map((column) => <div className="table-head" key={column}>{column}</div>)}
-          <div className="empty-row" style={{ gridColumn: `1 / ${columns.length + 1}` }}>
+          <div className="empty-row">
             <PackageOpen size={24} />
             <span><strong>{sale ? "Aucune vente pour le moment" : "Aucun achat pour le moment"}</strong><small>{sale ? "Commencez par ajouter la première ligne et suis ton résultat net en temps réel." : "Commencez par ajouter une ligne pour suivre vos achats."}</small></span>
           </div>

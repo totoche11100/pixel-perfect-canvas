@@ -1,6 +1,5 @@
 import { CalendarDays, ChevronDown } from "lucide-react";
 
-const bars = [48, 38, 72, 66, 34, 47, 36];
 const labels = ["V", "S", "D", "L", "M", "M", "J"];
 
 export function ChartCard() {
@@ -18,10 +17,10 @@ export function ChartCard() {
         <div className="axis-values"><span>160,00 €</span><span>80,00 €</span><span>0,00 €</span></div>
         <div className="grid-lines" />
         <div className="bars">
-          {bars.map((height, index) => (
+          {labels.map((label, index) => (
             <div className="bar-slot" key={`${labels[index]}-${index}`}>
-              <div className="bar-stack" style={{ height: `${height}%` }}><i /><b /><em /></div>
-              <span>{labels[index]}</span>
+              <div className={`bar-stack bar-height-${index + 1}`}><i /><b /><em /></div>
+              <span>{label}</span>
             </div>
           ))}
         </div>
