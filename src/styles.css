@@ -278,18 +278,39 @@
 /* Calibrage colorimétrique d'après la capture de référence. */
 .dashboard-shell {
   background:
-    radial-gradient(ellipse 31% 30% at 37% 22%, oklch(0.82 0.055 235 / 72%), transparent 70%),
-    radial-gradient(ellipse 39% 34% at 76% 35%, oklch(0.82 0.055 282 / 60%), transparent 72%),
-    radial-gradient(ellipse 35% 28% at 42% 69%, oklch(0.73 0.075 229 / 55%), transparent 70%),
-    linear-gradient(137deg, oklch(0.32 0.135 255), oklch(0.48 0.105 249) 46%, oklch(0.45 0.115 266));
+    radial-gradient(ellipse 38% 27% at 43% 27%, oklch(0.73 0.09 231 / 36%), transparent 72%),
+    radial-gradient(ellipse 43% 34% at 78% 47%, oklch(0.78 0.075 286 / 35%), transparent 74%),
+    linear-gradient(137deg, oklch(0.3 0.135 255), oklch(0.47 0.11 247) 47%, oklch(0.43 0.12 269));
 }
 
 .dashboard-shell::before {
+  content: "";
+  position: fixed;
+  inset: -15% -12%;
+  z-index: -1;
+  pointer-events: none;
   opacity: .55;
   background:
-    linear-gradient(124deg, transparent 12%, oklch(0.9 0.04 224 / 14%) 21%, transparent 33%),
-    linear-gradient(139deg, transparent 48%, oklch(0.92 0.025 294 / 13%) 61%, transparent 74%);
-  filter: blur(16px);
+    radial-gradient(ellipse 48% 76% at 6% 1%, transparent 42%, oklch(0.9 0.075 219 / 82%) 48%, oklch(0.71 0.13 221 / 34%) 55%, transparent 64%),
+    radial-gradient(ellipse 57% 50% at 15% 85%, transparent 38%, oklch(0.83 0.09 222 / 58%) 49%, oklch(0.71 0.12 236 / 28%) 57%, transparent 68%),
+    radial-gradient(ellipse 61% 84% at 103% 5%, transparent 43%, oklch(0.91 0.05 294 / 68%) 50%, oklch(0.75 0.1 286 / 32%) 58%, transparent 67%);
+  filter: blur(24px) saturate(118%);
+  transform: rotate(-3deg) scale(1.06);
+}
+
+.dashboard-shell::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: .72;
+  background:
+    radial-gradient(ellipse 31% 13% at 24% 8%, oklch(0.94 0.055 217 / 70%), transparent 72%),
+    radial-gradient(ellipse 34% 15% at 35% 44%, oklch(0.87 0.07 222 / 58%), transparent 75%),
+    radial-gradient(ellipse 30% 18% at 76% 49%, oklch(0.94 0.035 303 / 56%), transparent 76%),
+    radial-gradient(ellipse 27% 14% at 61% 77%, oklch(0.82 0.07 275 / 34%), transparent 78%);
+  filter: blur(34px);
 }
 
 .sidebar {
